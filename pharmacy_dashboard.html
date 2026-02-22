@@ -1,0 +1,1254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Egyptian Pharmacy Chain - Analytics Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px 40px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 28px;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .header p {
+            opacity: 0.9;
+            font-size: 14px;
+        }
+
+        .nav-tabs {
+            background: white;
+            padding: 0 40px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            display: flex;
+            gap: 5px;
+            overflow-x: auto;
+        }
+
+        .nav-tab {
+            padding: 15px 25px;
+            cursor: pointer;
+            border: none;
+            background: transparent;
+            color: #666;
+            font-size: 14px;
+            font-weight: 500;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+
+        .nav-tab:hover {
+            color: #667eea;
+            background: #f8f9fa;
+        }
+
+        .nav-tab.active {
+            color: #667eea;
+            border-bottom-color: #667eea;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 30px 40px;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.3s;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .kpi-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .kpi-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .kpi-label {
+            font-size: 13px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .kpi-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+
+        .kpi-subtitle {
+            font-size: 13px;
+            color: #666;
+        }
+
+        .kpi-trend {
+            display: inline-block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-top: 8px;
+        }
+
+        .kpi-trend.positive {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .kpi-trend.negative {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .kpi-trend.warning {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .chart-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .chart-container {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .chart-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .full-width {
+            grid-column: 1 / -1;
+        }
+
+        .table-container {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            overflow-x: auto;
+            margin-top: 20px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th {
+            background: #f8f9fa;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+            color: #495057;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid #dee2e6;
+        }
+
+        td {
+            padding: 12px;
+            border-bottom: 1px solid #f0f0f0;
+            font-size: 14px;
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .status-ok {
+            background: #d4edda;
+            color: #155724;
+        }
+
+        .status-warning {
+            background: #fff3cd;
+            color: #856404;
+        }
+
+        .status-critical {
+            background: #f8d7da;
+            color: #721c24;
+        }
+
+        .alert-box {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px 20px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        .alert-box strong {
+            color: #856404;
+        }
+
+        .legend-container {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13px;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px 20px;
+            }
+
+            .chart-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .kpi-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .header {
+                padding: 15px 20px;
+            }
+
+            .nav-tabs {
+                padding: 0 20px;
+            }
+        }
+
+        .metric-comparison {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px solid #f0f0f0;
+        }
+
+        .metric-item {
+            text-align: center;
+            flex: 1;
+        }
+
+        .metric-item-label {
+            font-size: 11px;
+            color: #888;
+            text-transform: uppercase;
+        }
+
+        .metric-item-value {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>🏥 Egyptian Pharmacy Chain Analytics</h1>
+        <p>Real-time Business Intelligence Dashboard | Last Updated: <span id="lastUpdate"></span></p>
+    </div>
+
+    <div class="nav-tabs">
+        <button class="nav-tab active" onclick="showTab('executive')">📊 Executive Overview</button>
+        <button class="nav-tab" onclick="showTab('branches')">🏪 Branch Performance</button>
+        <button class="nav-tab" onclick="showTab('inventory')">💊 Inventory Management</button>
+        <button class="nav-tab" onclick="showTab('sales')">📈 Sales Analytics</button>
+        <button class="nav-tab" onclick="showTab('customers')">👥 Customer Insights</button>
+        <button class="nav-tab" onclick="showTab('employees')">🎯 Employee Performance</button>
+    </div>
+
+    <div class="container">
+        <!-- EXECUTIVE OVERVIEW TAB -->
+        <div id="executive" class="tab-content active">
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-label">Total Revenue</div>
+                    <div class="kpi-value" id="totalRevenue">-</div>
+                    <div class="kpi-subtitle">From 50,000 transactions</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">Total Profit</div>
+                    <div class="kpi-value" id="totalProfit">-</div>
+                    <div class="kpi-subtitle" id="profitMargin">-</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">Avg Transaction</div>
+                    <div class="kpi-value" id="avgTransaction">-</div>
+                    <div class="kpi-subtitle">Per customer visit</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">Active Branches</div>
+                    <div class="kpi-value" id="totalBranches">-</div>
+                    <div class="kpi-subtitle" id="branchSubtitle">-</div>
+                </div>
+            </div>
+
+            <div class="alert-box" id="alertBox">
+                <strong>⚠️ Inventory Alerts:</strong> <span id="alertText">-</span>
+            </div>
+
+            <div class="chart-grid">
+                <div class="chart-container full-width">
+                    <div class="chart-title">📈 Revenue & Profit Trends (Monthly)</div>
+                    <canvas id="revenueTrendChart"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-grid">
+                <div class="chart-container">
+                    <div class="chart-title">🏆 Top 10 Medications by Revenue</div>
+                    <canvas id="topMedicationsChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <div class="chart-title">🏪 Top 10 Branches by Revenue</div>
+                    <canvas id="topBranchesChart"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-grid">
+                <div class="chart-container">
+                    <div class="chart-title">💊 Category Performance</div>
+                    <canvas id="categoryPieChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <div class="chart-title">🗺️ Governorate Revenue Distribution</div>
+                    <canvas id="governorateChart"></canvas>
+                </div>
+            </div>
+        </div>
+
+        <!-- BRANCH PERFORMANCE TAB -->
+        <div id="branches" class="tab-content">
+            <div class="chart-grid">
+                <div class="chart-container full-width">
+                    <div class="chart-title">🏪 Branch Revenue & Profit Comparison</div>
+                    <canvas id="branchComparisonChart"></canvas>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <div class="chart-title">📊 Branch Performance Scorecard</div>
+                <table id="branchTable">
+                    <thead>
+                        <tr>
+                            <th>Branch</th>
+                            <th>Governorate</th>
+                            <th>Manager</th>
+                            <th>Revenue</th>
+                            <th>Profit</th>
+                            <th>Profit %</th>
+                            <th>Transactions</th>
+                            <th>Revenue/SQM</th>
+                        </tr>
+                    </thead>
+                    <tbody id="branchTableBody"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- INVENTORY MANAGEMENT TAB -->
+        <div id="inventory" class="tab-content">
+            <div class="kpi-grid">
+                <div class="kpi-card">
+                    <div class="kpi-label">Out of Stock</div>
+                    <div class="kpi-value" style="color: #dc3545;" id="outOfStockCount">-</div>
+                    <div class="kpi-trend critical">CRITICAL - Immediate Action</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">Low Stock</div>
+                    <div class="kpi-value" style="color: #ffc107;" id="lowStockCount">-</div>
+                    <div class="kpi-trend warning">WARNING - Reorder Soon</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">Expiring Soon</div>
+                    <div class="kpi-value" style="color: #ff6b6b;" id="expiringSoonCount">-</div>
+                    <div class="kpi-trend warning">⚠️ Within 30 Days</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">Inventory Value</div>
+                    <div class="kpi-value" id="inventoryValue">-</div>
+                    <div class="kpi-subtitle">Total stock value</div>
+                </div>
+            </div>
+
+            <div class="chart-grid">
+                <div class="chart-container">
+                    <div class="chart-title">🎯 ABC Analysis - Medication Classification</div>
+                    <canvas id="abcChart"></canvas>
+                    <div class="legend-container">
+                        <div class="legend-item">
+                            <div class="legend-color" style="background: #667eea;"></div>
+                            <span><strong>Class A:</strong> Top 80% revenue (Critical)</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background: #ffc107;"></div>
+                            <span><strong>Class B:</strong> Next 15% revenue (Important)</span>
+                        </div>
+                        <div class="legend-item">
+                            <div class="legend-color" style="background: #6c757d;"></div>
+                            <span><strong>Class C:</strong> Last 5% revenue (Standard)</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <div class="chart-title">📦 Inventory Status Distribution</div>
+                    <canvas id="inventoryStatusChart"></canvas>
+                </div>
+            </div>
+
+            <div class="table-container">
+                <div class="chart-title">⚠️ Critical Inventory Issues - Top 20</div>
+                <table id="inventoryIssuesTable">
+                    <thead>
+                        <tr>
+                            <th>Branch</th>
+                            <th>Medication</th>
+                            <th>Category</th>
+                            <th>Stock</th>
+                            <th>Days to Expiry</th>
+                            <th>Status</th>
+                            <th>Value at Risk</th>
+                        </tr>
+                    </thead>
+                    <tbody id="inventoryIssuesBody"></tbody>
+                </table>
+            </div>
+
+            <div class="chart-container" style="margin-top: 20px;">
+                <div class="chart-title">💎 Top 15 A-Class Medications (Pareto 80%)</div>
+                <canvas id="topAClassChart"></canvas>
+            </div>
+        </div>
+
+        <!-- SALES ANALYTICS TAB -->
+        <div id="sales" class="tab-content">
+            <div class="chart-grid">
+                <div class="chart-container full-width">
+                    <div class="chart-title">📊 Category Performance - Revenue & Profit</div>
+                    <canvas id="categoryPerformanceChart"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-grid">
+                <div class="chart-container">
+                    <div class="chart-title">💳 Payment Method Distribution</div>
+                    <canvas id="paymentMethodChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <div class="chart-title">🕐 Hourly Sales Pattern</div>
+                    <canvas id="hourlyPatternChart"></canvas>
+                </div>
+            </div>
+
+            <div class="chart-container" style="margin-top: 20px;">
+                <div class="chart-title">📈 Monthly Revenue Trend</div>
+                <canvas id="monthlyRevenueLineChart"></canvas>
+            </div>
+        </div>
+
+        <!-- CUSTOMER INSIGHTS TAB -->
+        <div id="customers" class="tab-content">
+            <div class="chart-grid">
+                <div class="chart-container">
+                    <div class="chart-title">👥 Customer Demographics - Revenue</div>
+                    <canvas id="demographicsChart"></canvas>
+                </div>
+                <div class="chart-container">
+                    <div class="chart-title">📊 Transaction Count by Age Group</div>
+                    <canvas id="demographicsTransactionsChart"></canvas>
+                </div>
+            </div>
+
+            <div class="kpi-grid" style="margin-top: 20px;">
+                <div class="kpi-card">
+                    <div class="kpi-label">Top Customer Segment</div>
+                    <div class="kpi-value" id="topSegment">-</div>
+                    <div class="kpi-subtitle" id="topSegmentRevenue">-</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">Customer Types</div>
+                    <div class="kpi-value" id="customerTypes">-</div>
+                    <div class="kpi-subtitle">Age group segments</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">Avg Basket Size</div>
+                    <div class="kpi-value" id="avgBasket">-</div>
+                    <div class="kpi-subtitle">Per transaction</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- EMPLOYEE PERFORMANCE TAB -->
+        <div id="employees" class="tab-content">
+            <div class="chart-container">
+                <div class="chart-title">🏆 Top 10 Employees by Revenue</div>
+                <canvas id="topEmployeesChart"></canvas>
+            </div>
+
+            <div class="chart-grid" style="margin-top: 20px;">
+                <div class="kpi-card">
+                    <div class="kpi-label">Total Employees</div>
+                    <div class="kpi-value" id="totalEmployees">-</div>
+                    <div class="kpi-subtitle">Across all branches</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">Avg Revenue/Employee</div>
+                    <div class="kpi-value" id="avgRevenuePerEmployee">-</div>
+                    <div class="kpi-subtitle">Performance metric</div>
+                </div>
+                <div class="kpi-card">
+                    <div class="kpi-label">Top Performer</div>
+                    <div class="kpi-value" style="font-size: 20px;" id="topEmployee">-</div>
+                    <div class="kpi-subtitle" id="topEmployeeRevenue">-</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Load dashboard data
+        let dashboardData = null;
+
+        // Fetch data
+        fetch('dashboard_data.json')
+            .then(response => response.json())
+            .then(data => {
+                dashboardData = data;
+                initializeDashboard();
+            })
+            .catch(error => {
+                console.error('Error loading dashboard data:', error);
+                alert('Error loading dashboard data. Please ensure dashboard_data.json is in the same directory.');
+            });
+
+        function formatCurrency(value) {
+            return 'EGP ' + value.toLocaleString('en-US', { minimumFractionDigits: 0, maximumFractionDigits: 0 });
+        }
+
+        function formatNumber(value) {
+            return value.toLocaleString('en-US');
+        }
+
+        function showTab(tabName) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            // Show selected tab
+            document.getElementById(tabName).classList.add('active');
+
+            // Update nav tabs
+            document.querySelectorAll('.nav-tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            event.target.classList.add('active');
+        }
+
+        function initializeDashboard() {
+            const data = dashboardData;
+
+            // Update last update time
+            document.getElementById('lastUpdate').textContent = new Date().toLocaleString();
+
+            // ===== EXECUTIVE SUMMARY =====
+            document.getElementById('totalRevenue').textContent = formatCurrency(data.executive_summary.total_revenue);
+            document.getElementById('totalProfit').textContent = formatCurrency(data.executive_summary.total_profit);
+            document.getElementById('profitMargin').textContent = `Profit Margin: ${data.executive_summary.profit_margin.toFixed(2)}%`;
+            document.getElementById('avgTransaction').textContent = formatCurrency(data.executive_summary.avg_transaction);
+            document.getElementById('totalBranches').textContent = data.executive_summary.total_branches;
+            document.getElementById('branchSubtitle').textContent = `${data.executive_summary.total_employees} employees`;
+
+            // Inventory alerts
+            const alerts = data.inventory_alerts;
+            document.getElementById('outOfStockCount').textContent = alerts.out_of_stock;
+            document.getElementById('lowStockCount').textContent = alerts.low_stock;
+            document.getElementById('expiringSoonCount').textContent = alerts.expiring_soon;
+            document.getElementById('alertText').textContent = 
+                `${alerts.out_of_stock} items out of stock | ${alerts.low_stock} items low stock | ${alerts.expiring_soon} items expiring soon`;
+
+            // ===== CHARTS =====
+
+            // Revenue Trend Chart
+            new Chart(document.getElementById('revenueTrendChart'), {
+                type: 'line',
+                data: {
+                    labels: data.monthly_revenue.dates,
+                    datasets: [{
+                        label: 'Revenue',
+                        data: data.monthly_revenue.revenue,
+                        borderColor: '#667eea',
+                        backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                        tension: 0.4,
+                        fill: true,
+                        yAxisID: 'y'
+                    }, {
+                        label: 'Profit',
+                        data: data.monthly_revenue.profit,
+                        borderColor: '#27ae60',
+                        backgroundColor: 'rgba(39, 174, 96, 0.1)',
+                        tension: 0.4,
+                        fill: true,
+                        yAxisID: 'y'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    interaction: { mode: 'index', intersect: false },
+                    plugins: { 
+                        legend: { display: true, position: 'top' },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.dataset.label + ': ' + formatCurrency(context.parsed.y);
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            type: 'linear',
+                            display: true,
+                            position: 'left',
+                            ticks: {
+                                callback: function(value) {
+                                    return formatCurrency(value);
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Top Medications Chart
+            new Chart(document.getElementById('topMedicationsChart'), {
+                type: 'bar',
+                data: {
+                    labels: data.top_medications.names,
+                    datasets: [{
+                        label: 'Revenue',
+                        data: data.top_medications.revenue,
+                        backgroundColor: '#667eea'
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return formatCurrency(context.parsed.x);
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            ticks: {
+                                callback: function(value) {
+                                    return formatCurrency(value);
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Top Branches Chart
+            new Chart(document.getElementById('topBranchesChart'), {
+                type: 'bar',
+                data: {
+                    labels: data.top_branches.names,
+                    datasets: [{
+                        label: 'Revenue',
+                        data: data.top_branches.revenue,
+                        backgroundColor: '#764ba2'
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return formatCurrency(context.parsed.x);
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            ticks: {
+                                callback: function(value) {
+                                    return formatCurrency(value);
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Category Pie Chart
+            new Chart(document.getElementById('categoryPieChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: data.category_performance.categories,
+                    datasets: [{
+                        data: data.category_performance.revenue,
+                        backgroundColor: [
+                            '#667eea', '#764ba2', '#f093fb', '#4facfe',
+                            '#43e97b', '#fa709a', '#feca57', '#ee5a6f'
+                        ]
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { position: 'bottom' },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.label + ': ' + formatCurrency(context.parsed);
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Governorate Chart
+            new Chart(document.getElementById('governorateChart'), {
+                type: 'bar',
+                data: {
+                    labels: data.governorate_performance.governorates,
+                    datasets: [{
+                        label: 'Revenue',
+                        data: data.governorate_performance.revenue,
+                        backgroundColor: '#4facfe'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return formatCurrency(context.parsed.y);
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            ticks: {
+                                callback: function(value) {
+                                    return formatCurrency(value);
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Branch Comparison Chart
+            new Chart(document.getElementById('branchComparisonChart'), {
+                type: 'bar',
+                data: {
+                    labels: data.top_branches.names,
+                    datasets: [{
+                        label: 'Revenue',
+                        data: data.top_branches.revenue,
+                        backgroundColor: '#667eea'
+                    }, {
+                        label: 'Profit',
+                        data: data.top_branches.profit,
+                        backgroundColor: '#27ae60'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { display: true, position: 'top' },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.dataset.label + ': ' + formatCurrency(context.parsed.y);
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            ticks: {
+                                callback: function(value) {
+                                    return formatCurrency(value);
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Branch Table
+            const branchTableBody = document.getElementById('branchTableBody');
+            data.branch_scorecard.forEach(branch => {
+                const row = branchTableBody.insertRow();
+                row.innerHTML = `
+                    <td><strong>${branch.branch_name}</strong></td>
+                    <td>${branch.governorate}</td>
+                    <td>${branch.manager_name || 'N/A'}</td>
+                    <td>${formatCurrency(branch.total_amount)}</td>
+                    <td>${formatCurrency(branch.profit)}</td>
+                    <td><span class="status-badge ${branch.profit_margin > 30 ? 'status-ok' : branch.profit_margin > 20 ? 'status-warning' : 'status-critical'}">${branch.profit_margin.toFixed(1)}%</span></td>
+                    <td>${formatNumber(branch.sale_id)}</td>
+                    <td>${formatCurrency(branch.revenue_per_sqm)}</td>
+                `;
+            });
+
+            // ABC Analysis Chart
+            new Chart(document.getElementById('abcChart'), {
+                type: 'bar',
+                data: {
+                    labels: data.abc_analysis.classes,
+                    datasets: [{
+                        label: 'Number of Medications',
+                        data: data.abc_analysis.count,
+                        backgroundColor: ['#667eea', '#ffc107', '#6c757d']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    const revenue = data.abc_analysis.revenue[context.dataIndex];
+                                    return [
+                                        'Count: ' + context.parsed.y + ' medications',
+                                        'Revenue: ' + formatCurrency(revenue)
+                                    ];
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Inventory Status Chart
+            new Chart(document.getElementById('inventoryStatusChart'), {
+                type: 'doughnut',
+                data: {
+                    labels: data.inventory_status_summary.statuses,
+                    datasets: [{
+                        data: data.inventory_status_summary.count,
+                        backgroundColor: ['#27ae60', '#ffc107', '#dc3545', '#6c757d']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { position: 'bottom' }
+                    }
+                }
+            });
+
+            // Inventory Issues Table
+            const inventoryIssuesBody = document.getElementById('inventoryIssuesBody');
+            data.inventory_issues.forEach(issue => {
+                const row = inventoryIssuesBody.insertRow();
+                const statusClass = issue.status === 'OUT OF STOCK' ? 'status-critical' :
+                                  issue.status === 'LOW STOCK' ? 'status-warning' : 'status-critical';
+                row.innerHTML = `
+                    <td>${issue.branch_name}</td>
+                    <td><strong>${issue.medication_name}</strong></td>
+                    <td>${issue.category}</td>
+                    <td>${issue.stock_quantity}</td>
+                    <td>${issue.days_until_expiry}</td>
+                    <td><span class="status-badge ${statusClass}">${issue.status}</span></td>
+                    <td>${formatCurrency(issue.inventory_value)}</td>
+                `;
+            });
+
+            // Calculate total inventory value
+            const totalInventoryValue = data.inventory_status_summary.value.reduce((a, b) => a + b, 0);
+            document.getElementById('inventoryValue').textContent = formatCurrency(totalInventoryValue);
+
+            // Top A-Class Medications Chart
+            new Chart(document.getElementById('topAClassChart'), {
+                type: 'bar',
+                data: {
+                    labels: data.top_a_class_meds.names,
+                    datasets: [{
+                        label: 'Revenue',
+                        data: data.top_a_class_meds.revenue,
+                        backgroundColor: '#667eea'
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    const cumPct = data.top_a_class_meds.cumulative_pct[context.dataIndex];
+                                    return [
+                                        'Revenue: ' + formatCurrency(context.parsed.x),
+                                        'Cumulative: ' + cumPct.toFixed(1) + '%'
+                                    ];
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            ticks: {
+                                callback: function(value) {
+                                    return formatCurrency(value);
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Category Performance Chart
+            new Chart(document.getElementById('categoryPerformanceChart'), {
+                type: 'bar',
+                data: {
+                    labels: data.category_performance.categories,
+                    datasets: [{
+                        label: 'Revenue',
+                        data: data.category_performance.revenue,
+                        backgroundColor: '#667eea'
+                    }, {
+                        label: 'Profit',
+                        data: data.category_performance.profit,
+                        backgroundColor: '#27ae60'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { display: true, position: 'top' },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.dataset.label + ': ' + formatCurrency(context.parsed.y);
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            ticks: {
+                                callback: function(value) {
+                                    return formatCurrency(value);
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Payment Method Chart
+            new Chart(document.getElementById('paymentMethodChart'), {
+                type: 'pie',
+                data: {
+                    labels: data.payment_methods.methods,
+                    datasets: [{
+                        data: data.payment_methods.revenue,
+                        backgroundColor: ['#667eea', '#27ae60', '#ffc107', '#dc3545']
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { position: 'bottom' },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.label + ': ' + formatCurrency(context.parsed);
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Hourly Pattern Chart
+            new Chart(document.getElementById('hourlyPatternChart'), {
+                type: 'line',
+                data: {
+                    labels: data.hourly_pattern.hours.map(h => h + ':00'),
+                    datasets: [{
+                        label: 'Revenue',
+                        data: data.hourly_pattern.revenue,
+                        borderColor: '#667eea',
+                        backgroundColor: 'rgba(102, 126, 234, 0.1)',
+                        tension: 0.4,
+                        fill: true
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return formatCurrency(context.parsed.y);
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            ticks: {
+                                callback: function(value) {
+                                    return formatCurrency(value);
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Monthly Revenue Line Chart
+            new Chart(document.getElementById('monthlyRevenueLineChart'), {
+                type: 'line',
+                data: {
+                    labels: data.monthly_revenue.dates,
+                    datasets: [{
+                        label: 'Revenue',
+                        data: data.monthly_revenue.revenue,
+                        borderColor: '#667eea',
+                        backgroundColor: 'rgba(102, 126, 234, 0.2)',
+                        tension: 0.4,
+                        fill: true,
+                        pointRadius: 4,
+                        pointHoverRadius: 6
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return 'Revenue: ' + formatCurrency(context.parsed.y);
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            ticks: {
+                                callback: function(value) {
+                                    return formatCurrency(value);
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Demographics Charts
+            new Chart(document.getElementById('demographicsChart'), {
+                type: 'bar',
+                data: {
+                    labels: data.customer_demographics.age_groups,
+                    datasets: [{
+                        label: 'Revenue',
+                        data: data.customer_demographics.revenue,
+                        backgroundColor: '#764ba2'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return formatCurrency(context.parsed.y);
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            ticks: {
+                                callback: function(value) {
+                                    return formatCurrency(value);
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            new Chart(document.getElementById('demographicsTransactionsChart'), {
+                type: 'bar',
+                data: {
+                    labels: data.customer_demographics.age_groups,
+                    datasets: [{
+                        label: 'Transactions',
+                        data: data.customer_demographics.transactions,
+                        backgroundColor: '#4facfe'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    plugins: {
+                        legend: { display: false }
+                    }
+                }
+            });
+
+            // Customer KPIs
+            const topSegmentIndex = data.customer_demographics.revenue.indexOf(Math.max(...data.customer_demographics.revenue));
+            document.getElementById('topSegment').textContent = data.customer_demographics.age_groups[topSegmentIndex];
+            document.getElementById('topSegmentRevenue').textContent = formatCurrency(data.customer_demographics.revenue[topSegmentIndex]);
+            document.getElementById('customerTypes').textContent = data.customer_demographics.age_groups.length;
+            document.getElementById('avgBasket').textContent = formatCurrency(data.executive_summary.avg_transaction);
+
+            // Top Employees Chart
+            new Chart(document.getElementById('topEmployeesChart'), {
+                type: 'bar',
+                data: {
+                    labels: data.top_employees.names,
+                    datasets: [{
+                        label: 'Revenue',
+                        data: data.top_employees.revenue,
+                        backgroundColor: '#667eea'
+                    }]
+                },
+                options: {
+                    indexAxis: 'y',
+                    responsive: true,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    const transactions = data.top_employees.transactions[context.dataIndex];
+                                    return [
+                                        'Revenue: ' + formatCurrency(context.parsed.x),
+                                        'Transactions: ' + formatNumber(transactions)
+                                    ];
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            ticks: {
+                                callback: function(value) {
+                                    return formatCurrency(value);
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+
+            // Employee KPIs
+            document.getElementById('totalEmployees').textContent = data.executive_summary.total_employees;
+            const avgRevPerEmp = data.executive_summary.total_revenue / data.executive_summary.total_employees;
+            document.getElementById('avgRevenuePerEmployee').textContent = formatCurrency(avgRevPerEmp);
+            document.getElementById('topEmployee').textContent = data.top_employees.names[0];
+            document.getElementById('topEmployeeRevenue').textContent = formatCurrency(data.top_employees.revenue[0]);
+        }
+    </script>
+</body>
+</html>

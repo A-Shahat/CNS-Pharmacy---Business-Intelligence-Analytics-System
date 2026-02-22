@@ -1,0 +1,818 @@
+{
+  "executive_summary": {
+    "total_revenue": 19247224.75,
+    "total_transactions": 50000,
+    "avg_transaction": 384.944495,
+    "total_profit": 5230150.72,
+    "profit_margin": 27.173531706174934,
+    "total_branches": 10,
+    "total_employees": 50,
+    "total_medications": 200
+  },
+  "inventory_alerts": {
+    "out_of_stock": 26,
+    "low_stock": 174,
+    "expiring_soon": 19
+  },
+  "monthly_revenue": {
+    "dates": [
+      "2023-01",
+      "2023-02",
+      "2023-03",
+      "2023-04",
+      "2023-05",
+      "2023-06",
+      "2023-07",
+      "2023-08",
+      "2023-09",
+      "2023-10",
+      "2023-11",
+      "2023-12",
+      "2024-01",
+      "2024-02",
+      "2024-03",
+      "2024-04",
+      "2024-05",
+      "2024-06",
+      "2024-07",
+      "2024-08",
+      "2024-09",
+      "2024-10",
+      "2024-11",
+      "2024-12"
+    ],
+    "revenue": [
+      804210.83,
+      724259.88,
+      802954.21,
+      784926.68,
+      795486.81,
+      768631.9,
+      807772.82,
+      837578.79,
+      835147.04,
+      782565.56,
+      793983.84,
+      835884.06,
+      763153.49,
+      783292.92,
+      835510.3,
+      778276.53,
+      816599.91,
+      779088.13,
+      820567.44,
+      832688.14,
+      840441.43,
+      833123.66,
+      778899.58,
+      812180.8
+    ],
+    "profit": [
+      218695.39,
+      196598.05,
+      216119.06,
+      212397.18,
+      217207.22,
+      208899.9,
+      220523.92,
+      229069.6,
+      227230.63,
+      211986.14,
+      215912.3,
+      225995.82,
+      206245.36,
+      212532.05,
+      229697.94,
+      214735.25,
+      219676.7,
+      213370.33,
+      224394.14,
+      225228.06,
+      224714.95,
+      225398.1,
+      211038.28,
+      222484.35
+    ],
+    "transactions": [
+      2099,
+      1934,
+      2104,
+      2061,
+      2087,
+      1960,
+      2070,
+      2171,
+      2144,
+      2131,
+      2011,
+      2118,
+      2029,
+      2063,
+      2084,
+      2049,
+      2144,
+      1947,
+      2159,
+      2188,
+      2128,
+      2135,
+      2065,
+      2119
+    ]
+  },
+  "top_medications": {
+    "names": [
+      "Vitamin D",
+      "Ventolin",
+      "Budesonide",
+      "Gaviscon",
+      "Lactulose",
+      "Paracetamol 250mg",
+      "Ranitidine",
+      "Symbicort",
+      "Folic Acid",
+      "Antodine"
+    ],
+    "revenue": [
+      1032265.67,
+      898827.13,
+      664871.04,
+      602765.57,
+      572650.92,
+      514190.58,
+      495964.73,
+      482705.62,
+      477635.83,
+      365100.74
+    ],
+    "units_sold": [
+      3323,
+      2748,
+      2073,
+      2669,
+      2651,
+      1802,
+      2176,
+      2750,
+      2695,
+      1659
+    ],
+    "transactions": [
+      1817,
+      1524,
+      1180,
+      1499,
+      1485,
+      1007,
+      1193,
+      1546,
+      1481,
+      922
+    ]
+  },
+  "top_branches": {
+    "names": [
+      "CNS Pharmacy - Talkha",
+      "CNS Pharmacy - Dokki",
+      "CNS Pharmacy - Mansoura",
+      "CNS Pharmacy - Damanhur",
+      "CNS Pharmacy - Kafr El Dawwar",
+      "CNS Pharmacy - Zagazig",
+      "CNS Pharmacy - Mit Ghamr",
+      "CNS Pharmacy - Nasr City"
+    ],
+    "revenue": [
+      3856553.3,
+      3840267.5,
+      1962242.05,
+      1947792.16,
+      1945483.03,
+      1937773.79,
+      1900042.39,
+      1857070.53
+    ],
+    "profit": [
+      1043399.05,
+      1044823.73,
+      536288.2,
+      530358.0,
+      531408.84,
+      526341.8,
+      512439.65,
+      505091.45
+    ],
+    "transactions": [
+      10111,
+      9875,
+      5058,
+      5057,
+      5051,
+      4900,
+      5000,
+      4948
+    ]
+  },
+  "top_employees": {
+    "names": [
+      "Employee_032",
+      "Employee_019",
+      "Employee_006",
+      "Employee_005",
+      "Employee_001",
+      "Employee_017",
+      "Employee_042",
+      "Employee_013",
+      "Employee_011",
+      "Employee_014"
+    ],
+    "revenue": [
+      413927.25,
+      412141.21,
+      411542.89,
+      405028.09,
+      404981.74,
+      403698.55,
+      402236.38,
+      398124.75,
+      397361.47,
+      395778.2
+    ],
+    "transactions": [
+      1031,
+      1076,
+      1008,
+      1007,
+      1004,
+      1041,
+      1054,
+      981,
+      1062,
+      1016
+    ]
+  },
+  "category_performance": {
+    "categories": [
+      "Pain Relief",
+      "Vitamins",
+      "Respiratory",
+      "Gastrointestinal",
+      "Antibiotics",
+      "Cardiovascular",
+      "Diabetes",
+      "Dermatology",
+      "Pediatric",
+      "Neurological"
+    ],
+    "revenue": [
+      3887856.07,
+      2797712.15,
+      2685340.91,
+      2304548.11,
+      2049550.28,
+      1984113.27,
+      1283587.16,
+      1000218.63,
+      684309.77,
+      569988.4
+    ],
+    "profit": [
+      1012555.93,
+      711218.58,
+      760405.84,
+      680587.03,
+      536375.23,
+      567620.89,
+      334349.71,
+      281563.48,
+      171128.7,
+      174345.33
+    ],
+    "units": [
+      18471,
+      13536,
+      10832,
+      10776,
+      9144,
+      9233,
+      7128,
+      5183,
+      3720,
+      2580
+    ]
+  },
+  "branch_scorecard": [
+    {
+      "branch_name": "CNS Pharmacy - Damanhur",
+      "governorate": "Beheira",
+      "city": "Damanhur",
+      "total_amount": 1947792.16,
+      "profit": 530358.0,
+      "sale_id": 5057,
+      "quantity": 9258,
+      "profit_margin": 27.23,
+      "square_meters": 210,
+      "manager_name": "Manager_07",
+      "revenue_per_sqm": 9275.2
+    },
+    {
+      "branch_name": "CNS Pharmacy - Dokki",
+      "governorate": "Giza",
+      "city": "Dokki",
+      "total_amount": 3840267.5,
+      "profit": 1044823.73,
+      "sale_id": 9875,
+      "quantity": 17954,
+      "profit_margin": 27.21,
+      "square_meters": 130,
+      "manager_name": "Manager_01",
+      "revenue_per_sqm": 29540.52
+    },
+    {
+      "branch_name": "CNS Pharmacy - Dokki",
+      "governorate": "Giza",
+      "city": "Dokki",
+      "total_amount": 3840267.5,
+      "profit": 1044823.73,
+      "sale_id": 9875,
+      "quantity": 17954,
+      "profit_margin": 27.21,
+      "square_meters": 168,
+      "manager_name": "Manager_03",
+      "revenue_per_sqm": 22858.74
+    },
+    {
+      "branch_name": "CNS Pharmacy - Kafr El Dawwar",
+      "governorate": "Beheira",
+      "city": "Kafr El Dawwar",
+      "total_amount": 1945483.03,
+      "profit": 531408.84,
+      "sale_id": 5051,
+      "quantity": 9135,
+      "profit_margin": 27.32,
+      "square_meters": 99,
+      "manager_name": "Manager_09",
+      "revenue_per_sqm": 19651.34
+    },
+    {
+      "branch_name": "CNS Pharmacy - Mansoura",
+      "governorate": "Dakahlia",
+      "city": "Mansoura",
+      "total_amount": 1962242.05,
+      "profit": 536288.2,
+      "sale_id": 5058,
+      "quantity": 9132,
+      "profit_margin": 27.33,
+      "square_meters": 248,
+      "manager_name": "Manager_02",
+      "revenue_per_sqm": 7912.27
+    },
+    {
+      "branch_name": "CNS Pharmacy - Mit Ghamr",
+      "governorate": "Dakahlia",
+      "city": "Mit Ghamr",
+      "total_amount": 1900042.39,
+      "profit": 512439.65,
+      "sale_id": 5000,
+      "quantity": 9025,
+      "profit_margin": 26.97,
+      "square_meters": 83,
+      "manager_name": "Manager_10",
+      "revenue_per_sqm": 22892.08
+    },
+    {
+      "branch_name": "CNS Pharmacy - Nasr City",
+      "governorate": "Cairo",
+      "city": "Nasr City",
+      "total_amount": 1857070.53,
+      "profit": 505091.45,
+      "sale_id": 4948,
+      "quantity": 8811,
+      "profit_margin": 27.2,
+      "square_meters": 115,
+      "manager_name": "Manager_04",
+      "revenue_per_sqm": 16148.44
+    },
+    {
+      "branch_name": "CNS Pharmacy - Talkha",
+      "governorate": "Dakahlia",
+      "city": "Talkha",
+      "total_amount": 3856553.3,
+      "profit": 1043399.05,
+      "sale_id": 10111,
+      "quantity": 18271,
+      "profit_margin": 27.06,
+      "square_meters": 66,
+      "manager_name": "Manager_05",
+      "revenue_per_sqm": 58432.63
+    },
+    {
+      "branch_name": "CNS Pharmacy - Talkha",
+      "governorate": "Dakahlia",
+      "city": "Talkha",
+      "total_amount": 3856553.3,
+      "profit": 1043399.05,
+      "sale_id": 10111,
+      "quantity": 18271,
+      "profit_margin": 27.06,
+      "square_meters": 239,
+      "manager_name": "Manager_06",
+      "revenue_per_sqm": 16136.21
+    },
+    {
+      "branch_name": "CNS Pharmacy - Zagazig",
+      "governorate": "Sharqia",
+      "city": "Zagazig",
+      "total_amount": 1937773.79,
+      "profit": 526341.8,
+      "sale_id": 4900,
+      "quantity": 9017,
+      "profit_margin": 27.16,
+      "square_meters": 100,
+      "manager_name": "Manager_08",
+      "revenue_per_sqm": 19377.74
+    }
+  ],
+  "customer_demographics": {
+    "age_groups": [
+      "Child",
+      "Senior",
+      "Adult"
+    ],
+    "revenue": [
+      6444196.22,
+      6422693.52,
+      6380335.01
+    ],
+    "transactions": [
+      16709,
+      16666,
+      16625
+    ]
+  },
+  "payment_methods": {
+    "methods": [
+      "Insurance",
+      "Card",
+      "Cash"
+    ],
+    "revenue": [
+      6444976.15,
+      6439203.19,
+      6363045.41
+    ],
+    "transactions": [
+      16867,
+      16561,
+      16572
+    ]
+  },
+  "hourly_pattern": {
+    "hours": [
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21
+    ],
+    "revenue": [
+      1447836.84,
+      1543937.78,
+      1453955.64,
+      1491187.89,
+      1452736.42,
+      1491830.23,
+      1440609.52,
+      1500562.03,
+      1470673.43,
+      1498261.68,
+      1519514.46,
+      1510999.83,
+      1425119.0
+    ],
+    "transactions": [
+      3773,
+      3999,
+      3800,
+      3840,
+      3898,
+      3843,
+      3765,
+      3863,
+      3842,
+      3821,
+      3882,
+      3890,
+      3784
+    ]
+  },
+  "inventory_issues": [
+    {
+      "branch_name": "CNS Pharmacy - Dokki",
+      "medication_name": "Flagyl 100mg",
+      "category": "Antibiotics",
+      "stock_quantity": 212,
+      "days_until_expiry": 24,
+      "status": "EXPIRING SOON",
+      "inventory_value": 53771.68
+    },
+    {
+      "branch_name": "CNS Pharmacy - Zagazig",
+      "medication_name": "Vitamin D",
+      "category": "Vitamins",
+      "stock_quantity": 195,
+      "days_until_expiry": 16,
+      "status": "EXPIRING SOON",
+      "inventory_value": 48872.85
+    },
+    {
+      "branch_name": "CNS Pharmacy - Mansoura",
+      "medication_name": "Lexotanil",
+      "category": "Neurological",
+      "stock_quantity": 129,
+      "days_until_expiry": 24,
+      "status": "EXPIRING SOON",
+      "inventory_value": 33347.79
+    },
+    {
+      "branch_name": "CNS Pharmacy - Kafr El Dawwar",
+      "medication_name": "Seretide",
+      "category": "Respiratory",
+      "stock_quantity": 279,
+      "days_until_expiry": 18,
+      "status": "EXPIRING SOON",
+      "inventory_value": 29038.32
+    },
+    {
+      "branch_name": "CNS Pharmacy - Kafr El Dawwar",
+      "medication_name": "Gaviscon",
+      "category": "Gastrointestinal",
+      "stock_quantity": 213,
+      "days_until_expiry": 25,
+      "status": "EXPIRING SOON",
+      "inventory_value": 16490.46
+    },
+    {
+      "branch_name": "CNS Pharmacy - Talkha",
+      "medication_name": "Amlodipine 250mg",
+      "category": "Cardiovascular",
+      "stock_quantity": 147,
+      "days_until_expiry": 21,
+      "status": "EXPIRING SOON",
+      "inventory_value": 11180.82
+    },
+    {
+      "branch_name": "CNS Pharmacy - Mansoura",
+      "medication_name": "Betadine",
+      "category": "Dermatology",
+      "stock_quantity": 43,
+      "days_until_expiry": 20,
+      "status": "EXPIRING SOON",
+      "inventory_value": 8479.6
+    },
+    {
+      "branch_name": "CNS Pharmacy - Zagazig",
+      "medication_name": "Omeprazole",
+      "category": "Gastrointestinal",
+      "stock_quantity": 45,
+      "days_until_expiry": 25,
+      "status": "EXPIRING SOON",
+      "inventory_value": 6786.9
+    },
+    {
+      "branch_name": "CNS Pharmacy - Talkha",
+      "medication_name": "Symbicort",
+      "category": "Respiratory",
+      "stock_quantity": 78,
+      "days_until_expiry": 25,
+      "status": "EXPIRING SOON",
+      "inventory_value": 6004.4400000000005
+    },
+    {
+      "branch_name": "CNS Pharmacy - Damanhur",
+      "medication_name": "Januvia",
+      "category": "Diabetes",
+      "stock_quantity": 19,
+      "days_until_expiry": 158,
+      "status": "LOW STOCK",
+      "inventory_value": 5609.56
+    },
+    {
+      "branch_name": "CNS Pharmacy - Dokki",
+      "medication_name": "Ventolin",
+      "category": "Respiratory",
+      "stock_quantity": 18,
+      "days_until_expiry": 339,
+      "status": "LOW STOCK",
+      "inventory_value": 5297.58
+    },
+    {
+      "branch_name": "CNS Pharmacy - Dokki",
+      "medication_name": "Betnovate",
+      "category": "Dermatology",
+      "stock_quantity": 18,
+      "days_until_expiry": 344,
+      "status": "LOW STOCK",
+      "inventory_value": 5197.68
+    },
+    {
+      "branch_name": "CNS Pharmacy - Talkha",
+      "medication_name": "Metformin",
+      "category": "Diabetes",
+      "stock_quantity": 18,
+      "days_until_expiry": 255,
+      "status": "LOW STOCK",
+      "inventory_value": 5191.74
+    },
+    {
+      "branch_name": "CNS Pharmacy - Talkha",
+      "medication_name": "Sertraline",
+      "category": "Neurological",
+      "stock_quantity": 18,
+      "days_until_expiry": 176,
+      "status": "LOW STOCK",
+      "inventory_value": 5118.84
+    },
+    {
+      "branch_name": "CNS Pharmacy - Dokki",
+      "medication_name": "Gaviscon",
+      "category": "Gastrointestinal",
+      "stock_quantity": 17,
+      "days_until_expiry": 86,
+      "status": "LOW STOCK",
+      "inventory_value": 5018.91
+    },
+    {
+      "branch_name": "CNS Pharmacy - Talkha",
+      "medication_name": "Sertraline",
+      "category": "Neurological",
+      "stock_quantity": 19,
+      "days_until_expiry": 54,
+      "status": "LOW STOCK",
+      "inventory_value": 4976.67
+    },
+    {
+      "branch_name": "CNS Pharmacy - Mansoura",
+      "medication_name": "Motilium",
+      "category": "Gastrointestinal",
+      "stock_quantity": 37,
+      "days_until_expiry": 19,
+      "status": "EXPIRING SOON",
+      "inventory_value": 4939.13
+    },
+    {
+      "branch_name": "CNS Pharmacy - Kafr El Dawwar",
+      "medication_name": "Gripe Water",
+      "category": "Pediatric",
+      "stock_quantity": 19,
+      "days_until_expiry": 456,
+      "status": "LOW STOCK",
+      "inventory_value": 4877.870000000001
+    },
+    {
+      "branch_name": "CNS Pharmacy - Talkha",
+      "medication_name": "Pediatric Paracetamol",
+      "category": "Pediatric",
+      "stock_quantity": 47,
+      "days_until_expiry": 28,
+      "status": "EXPIRING SOON",
+      "inventory_value": 4518.58
+    },
+    {
+      "branch_name": "CNS Pharmacy - Nasr City",
+      "medication_name": "Vitamin D",
+      "category": "Vitamins",
+      "stock_quantity": 17,
+      "days_until_expiry": 789,
+      "status": "LOW STOCK",
+      "inventory_value": 4461.65
+    }
+  ],
+  "inventory_status_summary": {
+    "statuses": [
+      "EXPIRING SOON",
+      "LOW STOCK",
+      "OK",
+      "OUT OF STOCK"
+    ],
+    "count": [
+      19,
+      145,
+      437,
+      26
+    ],
+    "value": [
+      236177.99,
+      226179.27,
+      7782044.27,
+      0.0
+    ]
+  },
+  "abc_analysis": {
+    "classes": [
+      "A",
+      "B",
+      "C"
+    ],
+    "count": [
+      48,
+      24,
+      20
+    ],
+    "revenue": [
+      15395309.23,
+      2855798.29,
+      996117.23
+    ]
+  },
+  "top_a_class_meds": {
+    "names": [
+      "Vitamin D",
+      "Ventolin",
+      "Budesonide",
+      "Gaviscon",
+      "Lactulose",
+      "Paracetamol 250mg",
+      "Ranitidine",
+      "Symbicort",
+      "Folic Acid",
+      "Antodine",
+      "Augmentin 250mg",
+      "Seretide",
+      "Metformin",
+      "Iron",
+      "Zinc"
+    ],
+    "revenue": [
+      1032265.67,
+      898827.13,
+      664871.04,
+      602765.57,
+      572650.92,
+      514190.58,
+      495964.73,
+      482705.62,
+      477635.83,
+      365100.74,
+      342369.24,
+      337985.51,
+      313647.64,
+      312745.4,
+      312259.53
+    ],
+    "cumulative_pct": [
+      5.36,
+      10.03,
+      13.49,
+      16.62,
+      19.59,
+      22.27,
+      24.84,
+      27.35,
+      29.83,
+      31.73,
+      33.51,
+      35.26,
+      36.89,
+      38.52,
+      40.14
+    ]
+  },
+  "governorate_performance": {
+    "governorates": [
+      "Dakahlia",
+      "Beheira",
+      "Giza",
+      "Sharqia",
+      "Cairo"
+    ],
+    "revenue": [
+      7718837.74,
+      3893275.19,
+      3840267.5,
+      1937773.79,
+      1857070.53
+    ],
+    "profit": [
+      2092126.9,
+      1061766.84,
+      1044823.73,
+      526341.8,
+      505091.45
+    ],
+    "transactions": [
+      20169,
+      10108,
+      9875,
+      4900,
+      4948
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+employee_id,employee_name,branch_id,position,hire_date,salary
+1,Employee_001,2,Cashier,2021-08-11,5431
+2,Employee_002,10,Pharmacist,2021-01-30,12997
+3,Employee_003,2,Assistant Pharmacist,2020-04-26,8724
+4,Employee_004,7,Cashier,2022-04-08,4072
+5,Employee_005,1,Pharmacist,2021-03-19,12035
+6,Employee_006,2,Pharmacist,2021-08-09,12403
+7,Employee_007,7,Assistant Pharmacist,2020-05-17,6519
+8,Employee_008,7,Inventory Clerk,2022-01-20,5699
+9,Employee_009,8,Pharmacist,2020-08-19,10291
+10,Employee_010,6,Pharmacist,2021-09-14,11632
+11,Employee_011,4,Manager,2020-11-20,12813
+12,Employee_012,9,Cashier,2020-11-28,3748
+13,Employee_013,5,Manager,2021-11-09,19931
+14,Employee_014,8,Pharmacist,2022-05-29,13429
+15,Employee_015,10,Assistant Pharmacist,2022-10-20,5207
+16,Employee_016,4,Cashier,2022-03-20,5812
+17,Employee_017,2,Assistant Pharmacist,2021-10-04,7401
+18,Employee_018,4,Assistant Pharmacist,2021-01-29,8171
+19,Employee_019,10,Assistant Pharmacist,2022-11-27,6135
+20,Employee_020,3,Assistant Pharmacist,2021-07-07,8270
+21,Employee_021,2,Assistant Pharmacist,2022-10-11,5539
+22,Employee_022,6,Pharmacist,2021-08-02,12823
+23,Employee_023,1,Cashier,2021-12-11,4586
+24,Employee_024,3,Pharmacist,2020-07-23,12309
+25,Employee_025,2,Pharmacist,2020-04-01,11672
+26,Employee_026,9,Cashier,2022-04-23,5351
+27,Employee_027,4,Inventory Clerk,2022-09-05,6978
+28,Employee_028,5,Inventory Clerk,2020-05-08,6635
+29,Employee_029,1,Pharmacist,2020-03-27,14941
+30,Employee_030,7,Manager,2022-04-25,16016
+31,Employee_031,2,Manager,2022-06-20,14638
+32,Employee_032,3,Inventory Clerk,2022-07-21,4516
+33,Employee_033,10,Cashier,2021-02-05,5060
+34,Employee_034,9,Inventory Clerk,2021-04-08,5858
+35,Employee_035,10,Inventory Clerk,2020-07-04,4406
+36,Employee_036,9,Pharmacist,2021-09-18,11523
+37,Employee_037,4,Manager,2020-08-07,14776
+38,Employee_038,7,Manager,2020-08-03,17976
+39,Employee_039,6,Pharmacist,2020-07-11,10560
+40,Employee_040,6,Cashier,2022-01-24,5442
+41,Employee_041,2,Pharmacist,2022-06-11,8763
+42,Employee_042,2,Manager,2020-10-30,18650
+43,Employee_043,9,Assistant Pharmacist,2022-08-02,7402
+44,Employee_044,9,Inventory Clerk,2021-01-26,6744
+45,Employee_045,7,Pharmacist,2020-12-08,13450
+46,Employee_046,1,Manager,2021-04-22,16918
+47,Employee_047,6,Cashier,2022-05-04,5867
+48,Employee_048,4,Inventory Clerk,2022-01-20,6689
+49,Employee_049,4,Manager,2022-04-25,14868
+50,Employee_050,6,Inventory Clerk,2022-04-11,5141

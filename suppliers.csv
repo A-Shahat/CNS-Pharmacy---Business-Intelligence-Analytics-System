@@ -1,0 +1,11 @@
+supplier_id,supplier_name,contact_person,phone,email,city
+1,MedSupply Egypt,Contact_1,01161022415,supplier1@example.com,Alexandria
+2,PharmaDist Cairo,Contact_2,01138725937,supplier2@example.com,Alexandria
+3,HealthCare Suppliers,Contact_3,01017816969,supplier3@example.com,Giza
+4,MediLink Egypt,Contact_4,01270798826,supplier4@example.com,Giza
+5,PharmaHub,Contact_5,01295483910,supplier5@example.com,Tanta
+6,Cairo Medical Distributors,Contact_6,01473118068,supplier6@example.com,Alexandria
+7,Alexandria Pharma Supplies,Contact_7,01565992614,supplier7@example.com,Cairo
+8,Delta Medical,Contact_8,01457174596,supplier8@example.com,Cairo
+9,Egyptian HealthCare Co.,Contact_9,01577677403,supplier9@example.com,Giza
+10,Nile Pharmaceuticals,Contact_10,01095579709,supplier10@example.com,Cairo

@@ -1,0 +1,11 @@
+branch_id,branch_name,governorate,city,manager_name,opening_date,square_meters
+1,CNS Pharmacy - Dokki,Giza,Dokki,Manager_01,2013-09-08,130
+2,CNS Pharmacy - Mansoura,Dakahlia,Mansoura,Manager_02,2020-06-09,248
+3,CNS Pharmacy - Dokki,Giza,Dokki,Manager_03,2015-05-20,168
+4,CNS Pharmacy - Nasr City,Cairo,Nasr City,Manager_04,2020-12-14,115
+5,CNS Pharmacy - Talkha,Dakahlia,Talkha,Manager_05,2015-04-03,66
+6,CNS Pharmacy - Talkha,Dakahlia,Talkha,Manager_06,2014-09-19,239
+7,CNS Pharmacy - Damanhur,Beheira,Damanhur,Manager_07,2016-12-19,210
+8,CNS Pharmacy - Zagazig,Sharqia,Zagazig,Manager_08,2013-06-29,100
+9,CNS Pharmacy - Kafr El Dawwar,Beheira,Kafr El Dawwar,Manager_09,2018-11-20,99
+10,CNS Pharmacy - Mit Ghamr,Dakahlia,Mit Ghamr,Manager_10,2020-11-09,83

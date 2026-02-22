@@ -1,0 +1,201 @@
+medication_id,medication_name,category,manufacturer,unit_cost,unit_price,requires_rx,expiry_months
+1,Cephalexin 250mg,Antibiotics,Novartis,110.9,144.7,True,12
+2,Flagyl 50mg,Antibiotics,Amoun,163.19,259.13,False,12
+3,Augmentin 100mg,Antibiotics,GSK,249.67,356.61,False,18
+4,Flagyl 250mg,Antibiotics,Novartis,18.52,23.2,True,12
+5,Clindamycin 500mg,Antibiotics,EIPICO,260.61,344.28,True,24
+6,Azithromycin 100mg,Antibiotics,EVA Pharma,109.8,159.38,True,18
+7,Augmentin 5mg,Antibiotics,Novartis,77.22,104.87,True,18
+8,Flagyl 100mg,Antibiotics,Pfizer,253.64,380.26,False,12
+9,Clindamycin 100mg,Antibiotics,AstraZeneca,123.34,145.51,False,24
+10,Azithromycin 5mg,Antibiotics,EIPICO,152.27,235.73,False,18
+11,Ciprofloxacin 500mg,Antibiotics,Novartis,77.76,109.07,True,36
+12,Augmentin 50mg,Antibiotics,Sanofi,111.79,178.73,False,36
+13,Amoxicillin 250mg,Antibiotics,Sanofi,259.03,315.7,False,36
+14,Augmentin 250mg,Antibiotics,EIPICO,118.51,168.06,True,24
+15,Augmentin 250mg,Antibiotics,Hikma,205.68,247.13,True,24
+16,Clindamycin 5mg,Antibiotics,Sanofi,105.35,135.07,True,36
+17,Amoxicillin 5mg,Antibiotics,Hikma,263.38,334.1,True,18
+18,Augmentin 250mg,Antibiotics,Hikma,261.8,336.23,True,18
+19,Azithromycin 100mg,Antibiotics,Hikma,229.94,320.24,True,12
+20,Augmentin 100mg,Antibiotics,GSK,149.14,179.02,True,24
+21,Amlodipine 250mg,Cardiovascular,EVA Pharma,76.06,106.89,False,12
+22,Clopidogrel 50mg,Cardiovascular,Hikma,245.73,390.73,True,18
+23,Amlodipine 5mg,Cardiovascular,Novartis,145.21,202.92,True,36
+24,Amlodipine 10mg,Cardiovascular,Novartis,227.8,332.69,True,36
+25,Clopidogrel 5mg,Cardiovascular,EIPICO,115.16,179.05,True,12
+26,Amlodipine 500mg,Cardiovascular,Hikma,23.89,27.7,False,18
+27,Aspirin Cardio 500mg,Cardiovascular,Pharco,7.12,10.46,True,18
+28,Atenolol 250mg,Cardiovascular,Pfizer,258.59,305.62,True,24
+29,Clopidogrel 50mg,Cardiovascular,AstraZeneca,68.2,82.49,True,36
+30,Amlodipine 50mg,Cardiovascular,EVA Pharma,243.21,300.53,True,36
+31,Enalapril 50mg,Cardiovascular,Pharco,126.28,194.31,False,12
+32,Atenolol 50mg,Cardiovascular,EVA Pharma,219.82,331.99,True,18
+33,Amlodipine 500mg,Cardiovascular,Sanofi,163.2,197.97,True,24
+34,Losartan 500mg,Cardiovascular,Hikma,262.97,311.34,False,12
+35,Atenolol 5mg,Cardiovascular,EVA Pharma,299.79,457.54,False,18
+36,Amlodipine 50mg,Cardiovascular,Amoun,148.26,184.76,False,12
+37,Amlodipine 50mg,Cardiovascular,EIPICO,5.64,7.48,True,24
+38,Losartan 5mg,Cardiovascular,Hikma,287.41,459.26,True,36
+39,Amlodipine 500mg,Cardiovascular,AstraZeneca,92.53,146.75,False,12
+40,Clopidogrel 100mg,Cardiovascular,Hikma,21.86,30.89,True,18
+41,Metformin,Diabetes,Sanofi,288.43,342.09,True,12
+42,Januvia,Diabetes,Amoun,25.05,38.52,True,12
+43,Januvia,Diabetes,AstraZeneca,77.63,110.04,True,12
+44,Insulin NovoRapid,Diabetes,GSK,198.93,279.37,False,24
+45,Glibenclamide,Diabetes,Novartis,202.57,261.6,True,36
+46,Glibenclamide,Diabetes,GSK,203.15,261.05,False,12
+47,Metformin,Diabetes,EVA Pharma,140.19,224.21,True,12
+48,Januvia,Diabetes,GSK,67.88,86.16,True,12
+49,Glibenclamide,Diabetes,Hikma,114.01,139.2,True,24
+50,Januvia,Diabetes,Hikma,295.24,446.76,True,12
+51,Glucophage,Diabetes,EVA Pharma,246.05,316.11,False,18
+52,Insulin Lantus,Diabetes,Hikma,39.05,46.79,False,18
+53,Insulin Lantus,Diabetes,GSK,88.12,109.69,False,18
+54,Glucophage,Diabetes,EIPICO,192.1,243.74,False,24
+55,Amaryl,Diabetes,Novartis,19.99,28.69,True,12
+56,Metformin,Diabetes,Novartis,103.4,125.0,False,18
+57,Glucophage,Diabetes,Hikma,135.34,198.62,True,12
+58,Metformin,Diabetes,Sanofi,27.2,42.09,True,12
+59,Amaryl,Diabetes,Amoun,113.92,159.33,True,18
+60,Metformin,Diabetes,Pharco,95.94,149.14,True,24
+61,Ibuprofen 5mg,Pain Relief,Hikma,78.61,94.04,True,36
+62,Panadol 5mg,Pain Relief,Sanofi,50.59,79.35,True,18
+63,Ketoprofen 250mg,Pain Relief,Amoun,57.91,90.69,False,18
+64,Diclofenac 500mg,Pain Relief,Pharco,237.28,284.41,True,36
+65,Ibuprofen 500mg,Pain Relief,Novartis,245.89,333.71,True,18
+66,Ibuprofen 250mg,Pain Relief,Novartis,199.71,265.48,True,12
+67,Celebrex 100mg,Pain Relief,Hikma,108.59,149.77,True,24
+68,Paracetamol 250mg,Pain Relief,AstraZeneca,263.73,334.29,False,24
+69,Paracetamol 250mg,Pain Relief,GSK,180.99,236.29,True,36
+70,Panadol 10mg,Pain Relief,Pfizer,39.12,60.82,False,24
+71,Paracetamol 5mg,Pain Relief,Hikma,133.64,184.95,False,18
+72,Diclofenac 50mg,Pain Relief,GSK,25.64,37.15,True,24
+73,Voltaren 250mg,Pain Relief,Novartis,217.33,279.3,True,36
+74,Diclofenac 50mg,Pain Relief,Pfizer,210.68,294.84,False,36
+75,Voltaren 50mg,Pain Relief,AstraZeneca,204.81,318.74,False,24
+76,Ketoprofen 10mg,Pain Relief,Pfizer,250.95,322.91,False,36
+77,Celebrex 10mg,Pain Relief,EIPICO,183.97,238.24,False,36
+78,Voltaren 500mg,Pain Relief,Sanofi,155.8,234.82,True,12
+79,Diclofenac 10mg,Pain Relief,EVA Pharma,200.84,286.93,True,18
+80,Voltaren 100mg,Pain Relief,Pharco,71.27,88.35,True,12
+81,Ventolin,Respiratory,EVA Pharma,295.26,420.77,False,36
+82,Symbicort,Respiratory,Amoun,266.41,375.39,False,36
+83,Symbicort,Respiratory,Pharco,76.98,111.25,True,12
+84,Budesonide,Respiratory,Hikma,130.42,160.31,True,36
+85,Salbutamol Inhaler,Respiratory,EVA Pharma,169.43,264.8,True,36
+86,Ventolin,Respiratory,Hikma,241.42,350.16,True,24
+87,Budesonide,Respiratory,Hikma,267.97,382.04,False,36
+88,Budesonide,Respiratory,Sanofi,272.52,368.08,False,36
+89,Symbicort,Respiratory,Novartis,81.46,102.74,False,36
+90,Prednisolone,Respiratory,Novartis,75.58,101.88,True,18
+91,Seretide,Respiratory,EVA Pharma,104.08,161.52,True,18
+92,Ventolin,Respiratory,Pfizer,73.22,107.07,False,12
+93,Symbicort,Respiratory,Amoun,125.24,174.61,False,12
+94,Ventolin,Respiratory,AstraZeneca,250.7,332.24,True,12
+95,Budesonide,Respiratory,EIPICO,264.79,373.11,False,12
+96,Seretide,Respiratory,Amoun,93.09,123.39,True,18
+97,Symbicort,Respiratory,Pharco,69.73,93.87,True,36
+98,Seretide,Respiratory,Sanofi,202.32,305.33,True,36
+99,Ventolin,Respiratory,Amoun,294.31,409.2,True,12
+100,Salbutamol Inhaler,Respiratory,EIPICO,194.61,235.69,True,18
+101,Omeprazole,Gastrointestinal,EIPICO,81.75,106.05,True,24
+102,Antodine,Gastrointestinal,Amoun,229.56,303.16,False,24
+103,Gaviscon,Gastrointestinal,Hikma,29.16,33.79,True,12
+104,Antodine,Gastrointestinal,Pharco,71.15,84.02,True,12
+105,Ranitidine,Gastrointestinal,Sanofi,63.81,73.97,False,18
+106,Ranitidine,Gastrointestinal,Pfizer,144.7,173.85,True,36
+107,Lactulose,Gastrointestinal,AstraZeneca,80.59,106.06,True,12
+108,Gaviscon,Gastrointestinal,EVA Pharma,246.69,390.79,False,12
+109,Antodine,Gastrointestinal,Amoun,174.86,272.54,True,36
+110,Lactulose,Gastrointestinal,Pfizer,63.51,89.96,True,12
+111,Lactulose,Gastrointestinal,AstraZeneca,232.88,356.92,True,12
+112,Gaviscon,Gastrointestinal,GSK,295.23,443.49,True,36
+113,Lactulose,Gastrointestinal,GSK,114.32,157.5,False,12
+114,Gaviscon,Gastrointestinal,Amoun,128.92,176.7,False,24
+115,Lactulose,Gastrointestinal,Sanofi,268.01,363.66,False,36
+116,Ranitidine,Gastrointestinal,Novartis,221.47,350.91,False,36
+117,Motilium,Gastrointestinal,Novartis,133.49,197.43,False,24
+118,Gaviscon,Gastrointestinal,Novartis,77.42,121.59,True,36
+119,Ranitidine,Gastrointestinal,Amoun,226.39,318.4,False,24
+120,Omeprazole,Gastrointestinal,EIPICO,150.82,195.5,True,18
+121,Folic Acid,Vitamins,AstraZeneca,240.36,313.23,False,24
+122,Calcium,Vitamins,EVA Pharma,7.99,12.6,False,18
+123,Iron,Vitamins,Pfizer,124.9,174.84,True,36
+124,Iron,Vitamins,Pharco,214.99,290.6,True,12
+125,Folic Acid,Vitamins,Novartis,70.37,102.83,True,24
+126,Multivitamin,Vitamins,Hikma,168.27,219.54,True,24
+127,Folic Acid,Vitamins,Novartis,212.34,270.08,False,18
+128,Vitamin D,Vitamins,Hikma,217.78,281.37,False,18
+129,Vitamin B12,Vitamins,AstraZeneca,68.83,94.15,True,24
+130,Vitamin D,Vitamins,GSK,250.63,321.64,True,18
+131,Folic Acid,Vitamins,Novartis,9.17,12.75,True,12
+132,Vitamin D,Vitamins,Sanofi,168.24,246.28,True,36
+133,Vitamin D,Vitamins,EIPICO,262.45,369.62,True,36
+134,Multivitamin,Vitamins,Novartis,105.51,167.18,True,36
+135,Vitamin D,Vitamins,EVA Pharma,247.52,329.28,False,12
+136,Vitamin B12,Vitamins,Novartis,49.01,68.77,True,12
+137,Vitamin B12,Vitamins,AstraZeneca,39.94,59.67,True,18
+138,Zinc,Vitamins,EIPICO,159.16,215.3,False,24
+139,Zinc,Vitamins,AstraZeneca,178.61,239.87,True,12
+140,Calcium,Vitamins,Pfizer,288.23,344.34,False,18
+141,Clotrimazole,Dermatology,Sanofi,199.83,243.93,False,12
+142,Betnovate,Dermatology,AstraZeneca,5.79,7.83,True,36
+143,Clotrimazole,Dermatology,Novartis,14.63,18.72,True,36
+144,Hydrocortisone,Dermatology,AstraZeneca,207.78,325.33,True,18
+145,Fusidic Acid,Dermatology,Sanofi,38.86,48.62,True,24
+146,Betnovate,Dermatology,Novartis,26.07,31.93,True,24
+147,Fusidic Acid,Dermatology,Amoun,41.68,60.85,False,24
+148,Betadine,Dermatology,AstraZeneca,164.29,221.3,True,12
+149,Fusidic Acid,Dermatology,Pharco,221.69,315.17,True,12
+150,Betnovate,Dermatology,AstraZeneca,288.76,440.7,True,12
+151,Acne Cream,Dermatology,Sanofi,247.32,348.55,False,36
+152,Betadine,Dermatology,Sanofi,197.2,308.07,True,36
+153,Acne Cream,Dermatology,EIPICO,245.2,388.91,True,24
+154,Fusidic Acid,Dermatology,Sanofi,103.33,149.99,True,24
+155,Fusidic Acid,Dermatology,Amoun,209.63,268.26,False,12
+156,Fusidic Acid,Dermatology,EVA Pharma,30.98,39.15,True,36
+157,Betadine,Dermatology,Hikma,248.35,285.73,False,36
+158,Fusidic Acid,Dermatology,AstraZeneca,20.99,29.04,False,36
+159,Acne Cream,Dermatology,Novartis,135.4,158.85,True,18
+160,Clotrimazole,Dermatology,EVA Pharma,134.24,196.56,False,12
+161,Lexotanil,Neurological,Sanofi,184.62,232.19,True,24
+162,Alprazolam,Neurological,Pfizer,9.03,12.04,False,12
+163,Sertraline,Neurological,Sanofi,284.38,409.93,False,36
+164,Lexotanil,Neurological,Amoun,91.1,133.68,True,36
+165,Sertraline,Neurological,Amoun,76.9,107.51,True,18
+166,Alprazolam,Neurological,EVA Pharma,154.93,239.47,False,24
+167,Sertraline,Neurological,Novartis,105.26,158.36,True,12
+168,Fluoxetine,Neurological,AstraZeneca,219.19,334.67,True,36
+169,Gabapentin,Neurological,GSK,136.73,187.04,True,36
+170,Sertraline,Neurological,Pfizer,280.19,431.86,True,36
+171,Gabapentin,Neurological,GSK,257.52,343.75,False,36
+172,Lexotanil,Neurological,Sanofi,274.46,362.71,True,36
+173,Carbamazepine,Neurological,GSK,42.24,66.93,True,12
+174,Sertraline,Neurological,Pharco,34.41,53.67,True,18
+175,Sertraline,Neurological,EVA Pharma,261.93,415.55,False,36
+176,Fluoxetine,Neurological,EVA Pharma,104.88,153.3,True,24
+177,Lexotanil,Neurological,GSK,258.51,341.49,False,36
+178,Alprazolam,Neurological,Novartis,15.59,18.41,True,18
+179,Lexotanil,Neurological,EVA Pharma,31.66,50.35,False,36
+180,Gabapentin,Neurological,Pharco,209.73,326.45,True,24
+181,Pediatric Paracetamol,Pediatric,Sanofi,91.54,120.71,True,18
+182,Oral Rehydration,Pediatric,Sanofi,126.56,184.37,True,18
+183,Amoxil Syrup,Pediatric,AstraZeneca,28.3,43.64,False,18
+184,Gripe Water,Pediatric,EIPICO,274.28,333.09,False,24
+185,Gripe Water,Pediatric,EIPICO,80.32,92.71,True,24
+186,Oral Rehydration,Pediatric,GSK,51.6,69.6,False,24
+187,Gripe Water,Pediatric,Novartis,208.64,282.83,False,18
+188,Gripe Water,Pediatric,Amoun,256.73,307.56,True,24
+189,Oral Rehydration,Pediatric,Pharco,92.28,135.16,True,36
+190,Cough Syrup,Pediatric,Pharco,7.39,11.38,True,36
+191,Cough Syrup,Pediatric,GSK,233.84,293.13,True,18
+192,Amoxil Syrup,Pediatric,Sanofi,188.16,273.77,False,12
+193,Pediatric Paracetamol,Pediatric,AstraZeneca,96.14,129.63,False,24
+194,Amoxil Syrup,Pediatric,Amoun,31.59,40.52,False,18
+195,Amoxil Syrup,Pediatric,GSK,43.99,61.27,True,24
+196,Amoxil Syrup,Pediatric,EIPICO,80.81,122.92,True,24
+197,Cough Syrup,Pediatric,EVA Pharma,242.25,329.64,False,18
+198,Amoxil Syrup,Pediatric,Amoun,258.74,381.87,False,24
+199,Pediatric Paracetamol,Pediatric,Hikma,238.25,275.48,False,12
+200,Gripe Water,Pediatric,Novartis,113.73,169.12,False,36
